@@ -33,5 +33,12 @@ public class Blade : MonoBehaviour
     //        Slash.Play();
     //    }
     //}
-    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag=="WaterMelon")
+        {
+            FindObjectOfType<GameManager>().Victory();
+        }
+    }
+
 }

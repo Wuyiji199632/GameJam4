@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3654441892639681839}
   m_Layer: 0
   m_Name: Watermelon 1
-  m_TagString: Untagged
+  m_TagString: WaterMelon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,8 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slicedFruitPrefab: {fileID: 2729464015524632837, guid: f51b4618686b8d34dba08efa778133c6, type: 3}
-  gameManager: {fileID: 44802251708123495, guid: 121532e6e965c1c4da55306cc55340c6, type: 3}
-  TimeDuringNotSlicingFruits: 10
 --- !u!50 &-7458341914889182445
 Rigidbody2D:
   serializedVersion: 4

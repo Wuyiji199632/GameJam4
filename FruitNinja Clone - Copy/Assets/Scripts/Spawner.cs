@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
             Transform t = SpawnPlaces[Random.Range(0, SpawnPlaces.Length)];
             GameObject go = null;
             float p = Random.Range(0, 100);
-            if (p < 90)
+            if (p < 80)
             {
                 go = Bomb;
             }
