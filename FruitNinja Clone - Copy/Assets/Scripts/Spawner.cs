@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] fruitToSpawn;
+    public GameObject WaterMelton;
     public GameObject Bomb;
     public Transform[] SpawnPlaces;
     public float minWAait = 0.3f;
@@ -29,17 +30,22 @@ public class Spawner : MonoBehaviour
             Transform t = SpawnPlaces[Random.Range(0, SpawnPlaces.Length)];
             GameObject go = null;
             float p = Random.Range(0, 100);
-            if (p < 80)
+            if(FindObjectOfType<GameManager>().TimeDuringNotSlicingFruits>2f)
             {
-                go = Bomb;
+                if (p < 80)
+                {
+                    go = Bomb;
+                }
+                else
+                {
+                    go = fruitToSpawn[(Random.Range(0, fruitToSpawn.Length))];
+
+                } // 20% chance of spawing bombs and 80% chance of whatever objects.
+            }            
+            if(FindObjectOfType<GameManager>().TimeDuringNotSlicingFruits<=2f)
+            {
+                go = WaterMelton;
             }
-            else
-            {
-                go = fruitToSpawn[(Random.Range(0, fruitToSpawn.Length))];
-
-            } // 10% chance of spawing bombs and 90% chance of whatever objects.
-
-
             GameObject fruit = Instantiate(go, t.position, t.rotation);
             fruit.GetComponent<Rigidbody2D>().AddForce(t.transform.up * Random.Range(MinForce, MaxForce), ForceMode2D.Impulse);// shoot the fruits upwards.
             Debug.Log("Fruit gets spawned");
