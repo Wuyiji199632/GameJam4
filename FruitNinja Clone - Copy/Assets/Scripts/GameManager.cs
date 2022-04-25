@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
             TimeDuringNotSlicingFruits = 0;
             OnBombHit();
         }
-        if(score>=30||TimeDuringNotSlicingFruits<=0)
+        if(score>0)
         {
             TimeDuringNotSlicingFruits = 0;
             Victory();
